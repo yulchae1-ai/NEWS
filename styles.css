@@ -1,0 +1,94 @@
+/* Basic reset and variables */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --bg-dark: rgba(0,0,0,.42);
+  --accent: #2563eb;
+  --text: #f8fafc;
+  --muted: #e5e7eb;
+  --shadow: 0 10px 30px rgba(0,0,0,.25);
+  --maxw: 1100px;
+  --radius: 18px;
+  --pad: clamp(16px, 4vw, 32px);
+}
+
+/* Hero full-screen background using the tiger image */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  background-image: url('assets/tiger.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: grid;
+  place-items: center;
+}
+
+.hero .overlay{
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(1200px 600px at 70% 40%, rgba(0,0,0,.2), rgba(0,0,0,.65));
+}
+
+.hero .content{
+  position: relative;
+  text-align: center;
+  color: var(--text);
+  padding: var(--pad);
+  backdrop-filter: blur(2px);
+}
+
+.hero h1{
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1.05;
+  text-shadow: var(--shadow);
+  letter-spacing: .3px;
+}
+
+.hero p{
+  margin-top: 16px;
+  font-size: clamp(16px, 2.5vw, 22px);
+  color: #e2e8f0;
+}
+
+a.cta{
+  margin-top: 28px;
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+a.cta:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 36px rgba(37,99,235,.45);
+  background: #1d4ed8;
+}
+
+/* Below-hero sample section */
+.section{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 56px var(--pad);
+  color: #0f172a;
+}
+.section h2{
+  font-size: clamp(22px, 3vw, 32px);
+  margin-bottom: 12px;
+}
+.section p{
+  color: #334155;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* Footer */
+.footer{
+  border-top: 1px solid #e2e8f0;
+  padding: 24px var(--pad);
+  text-align: center;
+  color: #64748b;
+}
